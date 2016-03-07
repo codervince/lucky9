@@ -27,6 +27,11 @@ Higher risk, potentially greater returns. Limited to the higher a_e funds
 The systems are backing systems for GB flat racing, season 2016 only. Start date - end date.
 The maturity dates are April 2nd up to and including November 5th.
 
+You buy the fund for 1000 GBP starting capital (bank) or equivalent (depending on where BETFAIR Account is set up) or a share thereof - minimum 25% share 250 GBP at level stakes.
+For the percentage stakes, minimum investment is 1000 GBP. The risk of bankruptcy is too great with low banks.
+<CHECK whether 0.05 is OK>>
+
+
 We may use a high ROI laying system as a hedge (10+1) and other insurance style systems wih high ROI against bank depletion.
 
 Fee Management fee 2%
