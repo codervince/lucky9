@@ -3,8 +3,18 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from polymorphic.models import PolymorphicModel
 from django.contrib.postgres.fields import JSONField
-#user subscribed to Funds Funds contains multiple systems
-#correlations done in real-time
+
+
+class UserProfile(models.Model):
+    LANGUAGES =(
+    ('en_US', 'English'),
+    ('zh_HK', '中文'),
+    ('zh_CN', '官话'),
+    ('de_DE', 'Deutsch'),
+    )
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    joined = models.DateTimeField(auto_now_add=True)
+    language = models.CharField(max_length=10, choices=LANGUAGES) #iso code
 
 #custom Manager
 class LiveManager(models.Manager):
@@ -47,7 +57,7 @@ class Runner(models.Model):
     bfpsp = models.DecimalField(max_digits=6, decimal_places=2)
     ratingrank = models.SmallIntegerField()
     rating = models.FloatField()
-    raceno = models.CharField(max_length=250)
+    raceno = models.CharField(max_length=250, unique=True)
     draw = models.SmallIntegerField()
     damname = models.CharField(max_length=250)
     damsirename  = models.CharField(max_length=250)
