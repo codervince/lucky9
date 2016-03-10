@@ -6,8 +6,17 @@ from django.contrib.postgres.fields import JSONField
 #user subscribed to Funds Funds contains multiple systems
 #correlations done in real-time
 
+#custom Manager
+class LiveManager(models.Manager):
+    def get_queryset(self):
+        return super(LiveManager,self).get_queryset().filter(runtype='LIVE')
+
+
 #based on CSV
-class Runners(models.Model):
+class Runner(models.Model):
+    objects = models.Manager()
+    live = LiveManager()
+
     RUNTYPE = (
     ('LIVE', 'LIVE'),
     ('HISTORICAL', 'HISTORICAL'),
@@ -46,10 +55,13 @@ class Runners(models.Model):
     totalruns =  models.SmallIntegerField()
     placed = models.BooleanField()
     bfplaced= models.BooleanField()
-    systemid =  models.SmallIntegerField()
+    # systemid =  models.SmallIntegerField()
 
 
 class Fund(models.Model):
+
+    def get_absolute_url(self):
+        return reverse('systems.fund_detail', args=[self.code])
     CURRENCIES = (
     ('AUD', 'AUD'),
     ('GBP', 'GBP'),
@@ -137,9 +149,7 @@ class Snapshot(PolymorphicModel):
     average_losing_streak=models.FloatField()
     average_winning_streak=models.FloatField()
     created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.a_e
+    runners = models.ManyToManyField(Runner)
 
     class Meta:
         ordering = ('a_e','winsr')

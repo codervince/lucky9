@@ -1,0 +1,16 @@
+{% extends "systems/base.html" %}
+{% block title %}Funds{% endblock %}
+{% block content %}
+ <h1>The Funds:</h1>
+ {% for fund in funds %}
+ <h2>
+ <a href="{{ fund.get_absolute_url }}">
+ {{ fund.code }}
+ </a>
+ </h2>
+ <p class="date">
+ Date Created {{ fund.created }}
+ </p>
+ {{ fund.description|truncatewords:30|linebreaks }}
+ {% endfor %}
+{% endblock %}
