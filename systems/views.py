@@ -30,3 +30,13 @@ def fund_detail(request, code):
 # {%# SImple HTML FORM #%}
 # <form action="action_url">
 # {% csrf_token %}
+
+# def signup(request):
+#     userform = UserForm(request.POST)
+#     profileform =  ProfileForm(request.POST)
+#     if userform.is_valid() and profileform.is_valid():
+#     #Only if both are valid together
+#         user = userform.save()
+#         profile = profileform.save(commit = False)
+#         profile.user = user
+#         profile.save()
