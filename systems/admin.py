@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Runner, System, Snapshot, Fund,Investment, SystemSnapshot, FundSnapshot, QueryClause
+from .models import Runner, System, Fund, SystemSnapshot, FundSnapshot
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from accounts.models import UserProfile
+from useraccounts.models import UserProfile
 
 # Register your models here.
-admin.site.register([Runner, System, Snapshot, Fund, Investment, SystemSnapshot, FundSnapshot, QueryClause])
+admin.site.register([Runner, System, Fund, SystemSnapshot, FundSnapshot])
 
 class UserProfileInLine(admin.StackedInline):
     model = UserProfile

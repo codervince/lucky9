@@ -39,14 +39,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'accounts',
+    'useraccounts',
+    'systems',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'systems',
+
 
 )
 
@@ -97,7 +98,11 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
-    }
+    },
+# 'rpsystems' : {
+#         'ENGINE' : 'django_mongodb_engine',
+#         'NAME' : 'rpsystems',
+#    }
 }
 
 

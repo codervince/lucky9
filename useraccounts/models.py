@@ -21,7 +21,7 @@ class UserProfile(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_('profile'),)
     # user = models.OneToOneField(User)
-    # joined = models.DateTimeField(auto_now_add=True)
+    joined = models.DateTimeField(auto_now_add=True)
     language = models.CharField(_('language'), max_length=10, choices=LANGUAGES, default='en-us') #iso code
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)

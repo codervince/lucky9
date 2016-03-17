@@ -1,1 +1,13 @@
 *.pyc
+
+#Project files
+#put settings here too
+/lucky9funds/static
+/lucky9funds/tmp
+/lucky9funds/media
+
+#Translations:
+*.log
+
+#Django stuff:
+*.log

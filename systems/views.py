@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
-from .models import Runner, System, Snapshot, Fund, Investment, SystemSnapshot, FundSnapshot, QueryClause
+from .models import Runner, System, Fund,SystemSnapshot, FundSnapshot
 # from django.core.paginator import paginator, EmptyPage, PageNotAnInteger
 
 # def runner_list(request):
