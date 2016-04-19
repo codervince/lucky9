@@ -1,4 +1,6 @@
-# lucky78?
+# lucky78
+
+##The premise:
 
 We are running at least 2 funds comprising around 10 systems each.
 These systems have been chosen from a pool of X+X+X+X+X+X winning systems. 
@@ -63,3 +65,4 @@ See Fund and System pages for stats.
 We accept payments in HKD, USD, RMB, AUD, GBP, EUR 
 BTC also accepted, Apple Pay etc.. 
 
+#This is an earlier version of the code used to experiment with views/templates. 
